@@ -1,0 +1,27 @@
+# ----------------------------------
+# TOOLS (globais)
+# ----------------------------------
+[tools]
+go = "1.26"
+gh = "latest"
+helm = "latest"
+shfmt = "latest"
+aws-cli = "latest"
+kubectl = "latest"
+helmfile = "latest"
+terraform = "latest"
+shellcheck = "latest"
+terragrunt = "latest"
+
+# ----------------------------------
+# ENV GLOBAL
+# ----------------------------------
+[env]
+EDITOR = "vim"
+KUBECONFIG = "~/.kube/config"
+
+# ----------------------------------
+# SETTINGS
+# ----------------------------------
+[settings]
+idiomatic_version_file_enable_tools = ["node"]

@@ -1,0 +1,109 @@
+# ----------------------------------
+# GLOBAL
+# ----------------------------------
+add_newline = true
+palette = "nord"
+
+format = """
+$directory$git_branch$git_status$kubernetes$terraform$aws$cmd_duration
+$character
+"""
+
+# ----------------------------------
+# DIRECTORY
+# ----------------------------------
+[directory]
+style = "bold fg:blue"
+format = "[$path]($style) "
+truncation_length = 3
+truncate_to_repo = true
+
+# ----------------------------------
+# GIT
+# ----------------------------------
+[git_branch]
+symbol = " "
+style = "fg:green"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "fg:yellow"
+format = "[$all_status$ahead_behind]($style) "
+
+# ----------------------------------
+# 🚨 KUBERNETES (INTELIGENTE)
+# ----------------------------------
+[kubernetes]
+disabled = false
+format = "☸ [$context ($namespace)]($style) "
+
+# só ativa quando realmente estiver usando
+detect_env_vars = ["KUBECONFIG"]
+
+# 🔴 PROD automático (muito importante)
+[[kubernetes.contexts]]
+context_pattern = ".*prod.*"
+style = "bold red"
+context_alias = "prod"
+
+# 🟢 DEV
+[[kubernetes.contexts]]
+context_pattern = ".*dev.*"
+style = "green"
+context_alias = "dev"
+
+# 🟡 STAGING
+[[kubernetes.contexts]]
+context_pattern = ".*staging.*"
+style = "yellow"
+context_alias = "stg"
+
+# ----------------------------------
+# 📦 TERRAFORM (workspace)
+# ----------------------------------
+[terraform]
+symbol = "💠 "
+style = "bold purple"
+format = "[$symbol$workspace]($style) "
+
+# ----------------------------------
+# ☁️ AWS (profile + region)
+# ----------------------------------
+[aws]
+symbol = "☁ "
+style = "fg:yellow"
+format = "[$symbol$profile ($region)]($style) "
+
+# ----------------------------------
+# 🧠 MISE (tool versions)
+# ----------------------------------
+[mise]
+disabled = false
+symbol = "⚙ "
+style = "bold cyan"
+format = "[$symbol$health]($style) "
+
+# ----------------------------------
+# ⏱️ TEMPO DO COMANDO
+# ----------------------------------
+[cmd_duration]
+min_time = 500
+style = "fg:gray"
+format = "⏱ [$duration]($style) "
+
+# ----------------------------------
+# ➜ SETA (CUSTOMIZÁVEL)
+# ----------------------------------
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+# ----------------------------------
+# 🎨 PALETA (Nord clean)
+# ----------------------------------
+[palettes.nord]
+blue = "#296dbb"
+green = "#4bd566"
+yellow = "#EBCB8B"
+purple = "#B48EAD"
+gray = "#4C566A"
