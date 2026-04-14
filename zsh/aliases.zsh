@@ -3,6 +3,7 @@ alias ls='eza --color=always --group-directories-first'
 alias ll='eza -lah --icons --group-directories-first'
 alias la='eza -A'
 alias tree='eza --tree --icons'
+alias htop='btop'
 
 # FILE VIEW
 alias cat='bat --style=plain'
