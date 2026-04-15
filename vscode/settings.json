@@ -28,7 +28,8 @@
   // === Terminal ===
   //
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono, JetBrainsMono Nerd Font, monospace",
-  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.lineHeight": 1.2,
   "terminal.integrated.letterSpacing": 0.5,
   //
