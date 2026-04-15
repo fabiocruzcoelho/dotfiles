@@ -12,6 +12,7 @@ helmfile = "latest"
 terraform = "latest"
 shellcheck = "latest"
 terragrunt = "latest"
+pre-commit = "latest"
 
 # ----------------------------------
 # ENV GLOBAL
