@@ -20,7 +20,7 @@
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "update.showReleaseNotes": false,
-  // "window.zoomLevel": 0.5,
+  "window.zoomLevel": 0.3,
   "editor.folding": false,
   "zenMode.hideLineNumbers": false,
   // "editor.rulers": [79],
@@ -338,5 +338,5 @@
   "telemetry.telemetryLevel": "off",
   "aws.telemetry": false,
   "makefile.configureOnOpen": false,
-  "editor.accessibilitySupport": "on"
+  "editor.accessibilitySupport": "off"
 }
