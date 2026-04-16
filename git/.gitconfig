@@ -1,0 +1,18 @@
+[user]
+  name = Fabio Coelho
+  email = fabiocruzcoelho@gmail.com
+	signingkey = ~/.ssh/id_rsa.pub
+
+[core]
+  editor = vim
+
+[init]
+  defaultBranch = main
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/fabio/.config/git/allowed_signers
