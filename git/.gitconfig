@@ -14,5 +14,3 @@
 
 [gpg]
 	format = ssh
-[gpg "ssh"]
-	allowedSignersFile = /home/fabio/.config/git/allowed_signers
