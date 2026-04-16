@@ -6,9 +6,10 @@ alias ls='eza --color=always --group-directories-first'
 alias ll='eza -lah --icons --group-directories-first'
 alias apt-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'
 
-# FILE VIEW
-alias cat='bat --style=plain'
-alias catn='bat --style=numbers'
+# FILE/DIRECTORY VIEW
+alias cd='z'
+alias cat='batcat --style=plain'
+alias catn='batcat --style=numbers'
 
 # SEARCH
 alias grep='rg'

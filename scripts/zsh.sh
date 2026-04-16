@@ -57,6 +57,14 @@ else
   log_info "fzf já nstalado"
 fi
 
+# Zoxide
+if ! command -v zoxide >/dev/null 2>&1; then
+  log_info "Instalando Zoxide..."
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+else
+  log_info "Zoxide já está instalado"
+fi
+
 # Starship
 if ! command -v starship >/dev/null 2>&1; then
   log_info "Instalando Starship..."

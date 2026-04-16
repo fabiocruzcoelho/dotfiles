@@ -17,7 +17,6 @@ if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
 fi
 
-
 # módulos
 for file in exports aliases functions; do
   [ -f "$DOTFILES/zsh/$file.zsh" ] && source "$DOTFILES/zsh/$file.zsh"
@@ -30,11 +29,17 @@ if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # CTRL+F → buscar arquivo
 bindkey -s '^f' 'f\n'
 
-# CTRL+D → navegar diretórios
-bindkey -s '^d' 'fdcd\n'
+# CTRL+Z → navegar diretórios
+bindkey -s '^z' 'zf\n'
+
+# CTRL+H → navegar diretórios incluindo ocultos
+bindkey -s '^h' 'zf -h\n'
 
 # CTRL+G → grep interativo
 bindkey -s '^g' 'frg\n'
