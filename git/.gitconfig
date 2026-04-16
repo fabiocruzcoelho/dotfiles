@@ -1,7 +1,7 @@
 [user]
   name = Fabio Coelho
   email = fabiocruzcoelho@gmail.com
-	signingkey = ~/.ssh/id_rsa.pub
+	signingkey = /home/fabio/.ssh/id_rsa.pub
 
 [core]
   editor = vim
