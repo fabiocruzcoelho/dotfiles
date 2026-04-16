@@ -1,9 +1,10 @@
 # CORE
+alias la='eza -A'
+alias htop='btop'
+alias tree='eza --tree --icons'
 alias ls='eza --color=always --group-directories-first'
 alias ll='eza -lah --icons --group-directories-first'
-alias la='eza -A'
-alias tree='eza --tree --icons'
-alias htop='btop'
+alias apt-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'
 
 # FILE VIEW
 alias cat='bat --style=plain'
