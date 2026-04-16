@@ -2,6 +2,8 @@
 alias la='eza -A'
 alias htop='btop'
 alias tree='eza --tree --icons'
+alias shutdown='shutdown -h now'
+alias shutreset='shutdown -r now'
 alias ls='eza --color=always --group-directories-first'
 alias ll='eza -lah --icons --group-directories-first'
 alias apt-upgrade='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y'
