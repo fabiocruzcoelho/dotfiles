@@ -1,4 +1,6 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
+
 local config = {}
 
 if wezterm.config_builder then
@@ -22,71 +24,85 @@ config = {
   font_size = 11.5,
   font = wezterm.font("JetBrains Mono"),
   enable_tab_bar = false,
+
   window_padding = {
     left = 3,
     right = 3,
     top = 0,
     bottom = 0,
   },
-  background = {
+
+  background = nil,
+
+  -- ATALHOS
+  keys = {
+    -- SPLITS
     {
-      source = {
-        File = "/Users/hendrik/code/dotfiles/img/bg-monterey.png",
-      },
-      hsb = {
-        hue = 1.0,
-        saturation = 1.02,
-        brightness = 0.25,
-      },
-      width = "100%",
-      height = "100%",
+      key = "|",
+      mods = "CTRL|SHIFT",
+      action = act.SplitHorizontal({
+        domain = "CurrentPaneDomain",
+      }),
+    },
+
+    {
+      key = "-",
+      mods = "CTRL|SHIFT",
+      action = act.SplitVertical({
+        domain = "CurrentPaneDomain",
+      }),
+    },
+
+    -- RESIZE DOS PANES
+    {
+      key = "h",
+      mods = "CTRL|SHIFT",
+      action = act.AdjustPaneSize({ "Left", 3 }),
     },
     {
-      source = {
-        Color = "#000000",
-      },
-      width = "100%",
-      height = "100%",
-      opacity = 0.95,
+      key = "l",
+      mods = "CTRL|SHIFT",
+      action = act.AdjustPaneSize({ "Right", 3 }),
+    },
+    {
+      key = "k",
+      mods = "CTRL|SHIFT",
+      action = act.AdjustPaneSize({ "Up", 3 }),
+    },
+    {
+      key = "j",
+      mods = "CTRL|SHIFT",
+      action = act.AdjustPaneSize({ "Down", 3 }),
     },
   },
-  -- from: https://akos.ma/blog/adopting-wezterm/
+
+  -- hyperlinks
   hyperlink_rules = {
-    -- Matches: a URL in parens: (URL)
     {
       regex = "\\((\\w+://\\S+)\\)",
       format = "$1",
       highlight = 1,
     },
-    -- Matches: a URL in brackets: [URL]
     {
       regex = "\\[(\\w+://\\S+)\\]",
       format = "$1",
       highlight = 1,
     },
-    -- Matches: a URL in curly braces: {URL}
     {
       regex = "\\{(\\w+://\\S+)\\}",
       format = "$1",
       highlight = 1,
     },
-    -- Matches: a URL in angle brackets: <URL>
     {
       regex = "<(\\w+://\\S+)>",
       format = "$1",
       highlight = 1,
     },
-    -- Then handle URLs not wrapped in brackets
     {
-      -- Before
-      --regex = '\\b\\w+://\\S+[)/a-zA-Z0-9-]+',
-      --format = '$0',
-      -- After
       regex = "[^(]\\b(\\w+://\\S+[)/a-zA-Z0-9-]+)",
       format = "$1",
       highlight = 1,
     },
-    -- implicit mailto link
     {
       regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b",
       format = "mailto:$0",
