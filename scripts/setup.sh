@@ -41,7 +41,7 @@ log_info "Instalando dependências..."
 
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y
 
-for pkg in git curl zsh eza duf bat fd-find tldr direnv httpie btop; do
+for pkg in git curl zsh eza duf bat fd-find tldr ansible-core direnv httpie btop; do
   if ! command -v $pkg >/dev/null 2>&1; then
     log_info "Instalando $pkg..."
     sudo apt install -y $pkg
