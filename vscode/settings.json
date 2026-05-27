@@ -342,5 +342,6 @@
   "aws.telemetry": false,
   "makefile.configureOnOpen": false,
   "editor.accessibilitySupport": "off",
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked"
 }
