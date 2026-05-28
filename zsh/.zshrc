@@ -1,16 +1,16 @@
 export DOTFILES="$HOME/dotfiles"
 
+# mise
+if [ -x "$HOME/.local/bin/mise" ]; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+fi
+
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
 
 # plugins
 source "$DOTFILES/zsh/plugins.zsh"
 source $ZSH/oh-my-zsh.sh
-
-# mise
-if [ -x "$HOME/.local/bin/mise" ]; then
-  eval "$($HOME/.local/bin/mise activate zsh)"
-fi
 
 # fzf
 if [ -f ~/.fzf.zsh ]; then
