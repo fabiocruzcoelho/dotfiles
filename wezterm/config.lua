@@ -21,7 +21,7 @@ config = {
   tab_bar_at_bottom = true,
   enable_wayland = true,
   cursor_blink_rate = 400,
-  font_size = 11.5,
+  font_size = 12,
   font = wezterm.font("JetBrains Mono"),
   enable_tab_bar = false,
 
