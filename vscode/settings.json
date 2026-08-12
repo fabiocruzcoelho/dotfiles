@@ -343,6 +343,15 @@
   "makefile.configureOnOpen": false,
   "editor.accessibilitySupport": "off",
   "claudeCode.preferredLocation": "panel",
-  "chat.viewSessions.orientation": "stacked",
-  "explorer.confirmPasteNative": false
+  "explorer.confirmPasteNative": false,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
+  "go.toolsManagement.autoUpdate": true,
+  "chat.viewSessions.orientation": "stacked"
 }
